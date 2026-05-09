@@ -33,53 +33,7 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden;
   position: fixed; inset: 0;
   display: flex; align-items: stretch;
   background:
-    radial-gradient(1200px 800px at 70% 30%, #2a2520 0%, #1a1814 60%, #0f0d0a 100%);
-}
-
-.left-rail {
-  width: 360px;
-  padding: 36px 32px;
-  display: flex; flex-direction: column; gap: 28px;
-  border-right: 1px solid #2a251f;
-  flex-shrink: 0;
-  overflow-y: auto;
-}
-.brand-mark {
-  display: flex; align-items: center; gap: 10px;
-  font-weight: 600; letter-spacing: -0.2px; font-size: 17px;
-}
-.brand-dot { width: 22px; height: 22px; border-radius: 50%;
-  background: linear-gradient(135deg, #c4541b, #e88a3e); }
-
-.kicker {
-  font-size: 10px; letter-spacing: 1.4px; text-transform: uppercase;
-  color: #a89887; font-weight: 700;
-}
-.headline {
-  font-family: 'Instrument Serif', serif;
-  font-weight: 400; font-style: italic;
-  font-size: 38px; line-height: 1.05; margin: 8px 0 0;
-  color: #f5efe6; letter-spacing: -1px;
-}
-.headline em { font-style: normal; color: #e88a3e; }
-.lede {
-  font-size: 14px; line-height: 1.55; color: #a89887;
-  margin: 18px 0 0; max-width: 32ch;
-}
-.spec {
-  display: flex; flex-direction: column; gap: 12px;
-}
-.spec-row {
-  display: flex; gap: 10px; align-items: flex-start;
-  font-size: 12.5px; line-height: 1.5; color: #c8b9a4;
-}
-.spec-row span:first-child {
-  width: 60px; color: #6f6356; flex-shrink: 0;
-  text-transform: uppercase; letter-spacing: 0.6px; font-size: 10px;
-  padding-top: 2px; font-weight: 600;
-}
-.foot {
-  margin-top: auto; font-size: 11px; color: #6f6356; line-height: 1.5;
+    radial-gradient(1200px 800px at 50% 30%, #2a2520 0%, #1a1814 60%, #0f0d0a 100%);
 }
 
 /* Phone frame */
@@ -118,33 +72,6 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden;
   z-index: 100; pointer-events: none;
 }
 
-/* secondary stage info */
-.right-rail {
-  width: 280px;
-  padding: 36px 28px;
-  display: flex; flex-direction: column; gap: 22px;
-  border-left: 1px solid #2a251f;
-  flex-shrink: 0;
-  overflow-y: auto;
-}
-.flow-list { display: flex; flex-direction: column; gap: 14px; }
-.flow-item { display: flex; gap: 12px; align-items: flex-start; font-size: 12.5px; line-height: 1.45; color: #c8b9a4; }
-.flow-num {
-  width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0;
-  border: 1px solid #4a3f33; color: #a89887;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 11px; font-weight: 700; font-feature-settings: "tnum";
-}
-.flow-item b { color: #f5efe6; font-weight: 600; }
-
-@media (max-width: 1280px) {
-  .right-rail { display: none; }
-}
-@media (max-width: 980px) {
-  .left-rail { width: 280px; padding: 24px; }
-  .headline { font-size: 30px; }
-}
-
 /* leaflet niceties */
 .leaflet-container { font-family: inherit !important; }
 .leaflet-pane.leaflet-tile-pane { filter: saturate(0.85) brightness(1.02); }
@@ -156,32 +83,6 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden;
 <body>
 
 <div class="stage">
-
-  <aside class="left-rail">
-    <div class="brand-mark">
-      <span class="brand-dot"></span>
-      <span>Rapid Observer</span>
-    </div>
-
-    <div>
-      <div class="kicker">UNDP · Crisis Mapping Challenge</div>
-      <h1 class="headline">Community-led <em>damage signal</em> for the first 48 hours.</h1>
-      <p class="lede">An open-source PWA that lets neighbors photograph, classify, and pin damaged infrastructure — online or offline — to feed UNDP's RAPIDA early-recovery workflow.</p>
-    </div>
-
-    <div class="spec">
-      <div class="spec-row"><span>Stack</span><span>React PWA · Leaflet · IndexedDB queue · GeoJSON / CSV export</span></div>
-      <div class="spec-row"><span>Languages</span><span>EN · ES · FR · AR (RTL) · ZH · RU</span></div>
-      <div class="spec-row"><span>TRL</span><span>4 — clickable prototype with realistic state</span></div>
-      <div class="spec-row"><span>Scope</span><span>Reporter app: onboarding, capture flow, offline queue, dashboard, export</span></div>
-    </div>
-
-    <div class="foot">
-      Open the <b>Tweaks</b> panel (toolbar toggle) to swap color theme.
-      The <b>● online / offline</b> chip in the top-right of the phone toggles connectivity to demo offline queueing &amp; sync.
-    </div>
-  </aside>
-
   <div class="phone-area">
     <div class="phone">
       <div class="phone-screen">
@@ -191,26 +92,6 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden;
       </div>
     </div>
   </div>
-
-  <aside class="right-rail">
-    <div class="brand-mark" style="opacity: 0.7;">
-      <span style="font-size: 12px; letter-spacing: 0.4px;">DEMO PATH</span>
-    </div>
-    <div class="flow-list">
-      <div class="flow-item"><span class="flow-num">1</span><span><b>Pick a language</b> — six UN languages, RTL for Arabic.</span></div>
-      <div class="flow-item"><span class="flow-num">2</span><span><b>Tap "+ New report"</b> on the home screen.</span></div>
-      <div class="flow-item"><span class="flow-num">3</span><span><b>Capture a photo</b> — auto-geotagged with GPS &amp; what3words.</span></div>
-      <div class="flow-item"><span class="flow-num">4</span><span><b>Confirm location</b> by tapping a building footprint or dragging the pin.</span></div>
-      <div class="flow-item"><span class="flow-num">5</span><span><b>Classify damage</b> — minimal / partial / complete + infra &amp; crisis type.</span></div>
-      <div class="flow-item"><span class="flow-num">6</span><span><b>Toggle offline</b> (top-right chip) and submit — watch the queue fill.</span></div>
-      <div class="flow-item"><span class="flow-num">7</span><span><b>View Map tab</b> — pins, heatmap, or clusters of nearby reports.</span></div>
-      <div class="flow-item"><span class="flow-num">8</span><span><b>Export</b> — CSV or GeoJSON preview from the Home card.</span></div>
-    </div>
-    <div class="foot" style="margin-top: 18px;">
-      All map tiles via Carto Positron. Footprints synthesized for demo; in production the app would consume Microsoft / Google Open Buildings or local OSM data.
-    </div>
-  </aside>
-
 </div>
 
 <div id="tweaks-root"></div>
@@ -226,7 +107,7 @@ html, body { margin: 0; padding: 0; height: 100%; overflow: hidden;
 const { useTweaks, TweaksPanel, TweakSection, TweakRadio, TweakSelect } = window;
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-  "theme": "sage"
+  "theme": "dusk"
 }/*EDITMODE-END*/;
 
 function Shell() {
